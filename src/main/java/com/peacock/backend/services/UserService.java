@@ -24,7 +24,7 @@ public class UserService {
     public UserDTO login(CredentialsDTO credentialsDTO){
        User user= userRepository.findByEmail(credentialsDTO.email()).orElseThrow(()->new RuntimeException("userNotFound"));
         if(passwordEncoder.matches(CharBuffer.wrap(credentialsDTO.password()),user.getPassword())){
-            System.out.println("hnaya "+user.getRole());
+
             return userMapper.toUserDTO(user);
         }
         throw new RuntimeException("userNotFound");
