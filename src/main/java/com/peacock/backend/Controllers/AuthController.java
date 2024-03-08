@@ -1,5 +1,6 @@
 package com.peacock.backend.Controllers;
 
+import com.peacock.backend.Config.UserAuthProvider;
 import com.peacock.backend.dto.CredentialsDTO;
 import com.peacock.backend.dto.UserDTO;
 import com.peacock.backend.services.UserService;
@@ -14,10 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class AuthController {
     private final UserService userService;
+    private final UserAuthProvider userAuthProvider;
     @PostMapping("/login")
     public ResponseEntity<UserDTO> login(@RequestBody CredentialsDTO credentialsDTO){
-        UserDTO userDTO=userService.login(credentialsDTO);
-        return ResponseEntity.ok(userDTO);
+        System.out.println("test");
+        UserDTO user=userService.login(credentialsDTO);
+        user.setToken(userAuthProvider.createToken(user));
+        return ResponseEntity.ok(user);
 
 
 
