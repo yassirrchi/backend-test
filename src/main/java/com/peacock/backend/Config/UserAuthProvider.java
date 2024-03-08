@@ -32,6 +32,8 @@ public class UserAuthProvider {
         return JWT.create().withIssuer(userDTO.getEmail())
                 .withIssuedAt(now).withExpiresAt(validity)
                 .withClaim("email",userDTO.getEmail())
+                .withClaim("role",userDTO.getRole())
+
                 .sign(Algorithm.HMAC256(secretKey));
 
 

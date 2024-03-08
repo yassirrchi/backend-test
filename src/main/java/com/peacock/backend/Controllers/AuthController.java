@@ -20,6 +20,8 @@ public class AuthController {
     public ResponseEntity<UserDTO> login(@RequestBody CredentialsDTO credentialsDTO){
         System.out.println("test");
         UserDTO user=userService.login(credentialsDTO);
+
+
         user.setToken(userAuthProvider.createToken(user));
         return ResponseEntity.ok(user);
 

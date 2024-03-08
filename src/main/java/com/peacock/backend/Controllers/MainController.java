@@ -21,12 +21,7 @@ public class MainController {
     public ResponseEntity<String> liveTest(){
         return ResponseEntity.ok("its live");
     }
-    @PostMapping("/create-client")
-    public ResponseEntity<UserDTO> createUser(@RequestBody ClientDTO clientDTO){
-        UserDTO client=userService.createClient(clientDTO);
-        return ResponseEntity.created(URI.create("/users/"+client.getId())).body(client);
 
-    }
 
 
 

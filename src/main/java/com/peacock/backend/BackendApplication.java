@@ -1,6 +1,7 @@
 package com.peacock.backend;
 
 import com.peacock.backend.entities.User;
+import com.peacock.backend.enums.Role;
 import com.peacock.backend.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,7 +25,10 @@ public class BackendApplication {
 		User user=new User();
 		user.setEmail("yassir@gmail.com");
 		user.setPassword(passwordEncoder.encode("123"));
+		user.setRole(Role.VIEWER.toString());
+		System.out.println(user.getRole());
 		userRepository.save(user);
+			System.out.println(user.getRole());
 
 		};
 	}

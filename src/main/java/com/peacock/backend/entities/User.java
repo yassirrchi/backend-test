@@ -1,5 +1,6 @@
 package com.peacock.backend.entities;
 
+import com.peacock.backend.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,5 +19,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
+    private String role;
     private String password;
+
+
+
 }

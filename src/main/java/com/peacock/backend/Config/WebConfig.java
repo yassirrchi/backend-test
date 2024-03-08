@@ -23,7 +23,7 @@ public class WebConfig {
         UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
         CorsConfiguration config =new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.addAllowedOrigin("http://localhost:4200");
         config.setAllowedHeaders(Arrays.asList(HttpHeaders.AUTHORIZATION,HttpHeaders.CONTENT_TYPE,HttpHeaders.ACCEPT));
         config.setAllowedMethods(Arrays.asList(HttpMethod.GET.name(),HttpMethod.PUT.name(),HttpMethod.POST.name(),HttpMethod.DELETE.name()));
         config.setMaxAge(3600L);
