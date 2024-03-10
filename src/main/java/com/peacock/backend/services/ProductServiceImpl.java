@@ -3,10 +3,12 @@ package com.peacock.backend.services;
 import com.peacock.backend.entities.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @RequiredArgsConstructor
 @Service
+@Transactional
 
 public class ProductServiceImpl implements ProductService {
     @Override

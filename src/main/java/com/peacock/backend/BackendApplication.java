@@ -158,6 +158,16 @@ public class BackendApplication {
 			bill2.setClient(client2);
 			billRepository.save(bill2);
 
+			//client3
+			Client client3=new Client();
+			client3.setFirstName("Zakaria");
+			client3.setLastName("Hamd");
+			client3.setEmail("zakaria@gmail.com");
+			client3.setAddress("Tanger, Anza");
+			client3.setPhoneNumber("0600000000");
+			clientRepository.save(client3);
+
+
 
 
 

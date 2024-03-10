@@ -9,5 +9,6 @@ import java.util.List;
 public interface ClientServices {
     public List<Client> getAllClients();
     public Client createClient(Client client);
+    public Client getClient(Long id);
     public Client editClient(Client client);
 }

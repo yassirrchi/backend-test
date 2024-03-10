@@ -1,5 +1,6 @@
 package com.peacock.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class Client {
     private String email;
     private String address;
     private String phoneNumber;
+    @JsonIgnore
     @OneToMany(mappedBy = "client",orphanRemoval = true)
 
     private List<Bill> bills=new ArrayList<Bill>();

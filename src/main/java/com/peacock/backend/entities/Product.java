@@ -1,5 +1,6 @@
 package com.peacock.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class Product {
     private String description;
     private BigDecimal price;
     private Integer quantityInStock;
+    @JsonIgnore
     @OneToMany(mappedBy = "product",orphanRemoval = true)
 
     private List<BillItem> billsItems=new ArrayList<BillItem>();
