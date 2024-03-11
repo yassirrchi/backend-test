@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.nio.CharBuffer;
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -28,6 +29,13 @@ public class UserService {
             return userMapper.toUserDTO(user);
         }
         throw new RuntimeException("userNotFound");
+    }
+    public List<UserDTO> getAllUsers (){
+        List<User> allUsers=userRepository.findAll();
+
+
+
+        return userMapper.toUserDTOList(allUsers);
     }
 
 

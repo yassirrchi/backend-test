@@ -34,7 +34,7 @@ public class BackendApplication {
 
 
 
-			//bill1
+			//DUMMMY DATA 
 			Bill bill = new Bill();
 			BillItem billItem = new BillItem();
 			BillItem billItem2 = new BillItem();

@@ -17,11 +17,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ClientController {
+public class ClientController {//http status codes to be fixed
     @Autowired
     private ClientServices clientServices;
     @GetMapping("/all-clients")
-    public ResponseEntity<List<Client>> liveTest(){
+    public ResponseEntity<List<Client>> getAllClients(){
 
 
         return ResponseEntity.ok(clientServices.getAllClients());
